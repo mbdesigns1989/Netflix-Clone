@@ -1,8 +1,28 @@
 import React from 'react';
 import "./Nav.css";
+import { useState } from 'react';
+import { useEffect } from 'react';
+
 
 const Nav = () => {
-    return <div className="nav nav__black">
+    const [show, handleshow] = useState(false);
+
+    const transitionNavBar = () => {
+        if (window.scrollY > 400) {
+            handleshow(true)
+        } else {
+            handleshow(false)
+        }
+    }
+
+    useEffect(() => {
+        // eslint-disable-next-line no-restricted-globals
+        window.addEventListener("scroll", transitionNavBar);
+        // eslint-disable-next-line no-restricted-globals
+        return () => window.removeEventListener("scroll", transitionNavBar)
+    }, [])
+
+    return <div className={`nav ${show && 'nav__black'}`}>
         <div className="nav__contents">
             <img
                 className="nav__logo"
