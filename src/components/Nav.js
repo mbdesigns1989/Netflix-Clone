@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Nav.css";
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const Nav = () => {
