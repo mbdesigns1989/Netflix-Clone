@@ -76,10 +76,16 @@
     max-width: 600px;
  }
 
+ .loginScreen__input {
+    margin: 20px;
+ }
+
  .loginScreen__getStarted {
     padding: 16px 20px;
     font-size: 1rem;
     color: #fff;
     background-color: #e50914;
     border: none;
+    font-weight: 600;
+    cursor: pointer;
  }
